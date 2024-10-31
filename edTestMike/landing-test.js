@@ -1,6 +1,7 @@
 const usernameElTestMike = document.getElementById('username')
 const titleElTestMike = document.getElementById('title')
 const contentElTestMike = document.getElementById('content')
+const errorElTestMike = document.getElementById('error')
 
 const edTest = (description, testFunction) => {
   const result = testFunction();
@@ -30,6 +31,9 @@ function clearForm(){
   }
   if(contentElTestMike){
     contentElTestMike.value = ''
+  }
+  if(errorElTestMike){
+    errorElTestMike.textContent = ''
   }
 }
 
@@ -142,6 +146,7 @@ edTest(
       (!usernameInput.value || !titleInput.value || !contentInput.value) &&
       error.textContent === 'Please complete the form.'
     ) {
+    
       return {
         ok: true,
         passed: true,
