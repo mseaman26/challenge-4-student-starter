@@ -131,12 +131,12 @@ edTest(
     const { form, usernameInput, titleInput, contentInput, error } =
       initializeHTML();
 
-    if (!form || !usernameInput || !titleInput || !contentInput) {
+    if (!form || !usernameInput || !titleInput || !contentInput || !error) {
       return {
         ok: true,
         passed: false,
         feedback:
-          'The form does not have all of the required labels and inputs!',
+          'The form does not have all of the required labels and inputs and paragraphs!',
         expand_feedback: true,
       };
     }
