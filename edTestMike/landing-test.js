@@ -194,7 +194,7 @@ edTest(
         ok: true,
         passed: false,
         feedback:
-          'no function called readLocalStorage has been defined',
+          'no function called readLocalStorage has been defined. It should be defined in logic.js',
         expand_feedback: false,
       };
     }
@@ -253,7 +253,7 @@ edTest(
         ok: true,
         passed: false,
         feedback:
-          'no function called storeLocalStorage has been defined',
+          'no function called storeLocalStorage has been defined. It should be defined in logic.js',
         expand_feedback: false,
       };
     }
