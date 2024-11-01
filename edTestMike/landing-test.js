@@ -21,6 +21,9 @@ const edTest = (description, testFunction) => {
   }
 }
 
+//save any user local storage then reset local storag
+const userBlogsMike = JSON.parse(localStorage.getItem('blogs'))
+localStorage.removeItem('blogs')
 function clearForm(){
  
   if(usernameElTestMike){
@@ -335,18 +338,11 @@ edTest(
   }
   
 );
-const blogs = JSON.parse(localStorage.getItem('blogs'))
-const filteredBlogs = blogs?.filter((blog) => {
-  if (blog.username === 'test' && blog.title === 'test' && blog.content === 'test') {
-    return false; // This blog has all fields set to 'test' and will be filtered out
-  }
-  return true; // Keep this blog if any field is not 'test'
-});
-if(!filteredBlogs || filteredBlogs.length === 0){
-  localStorage.removeItem('blogs')
-}else{
-  localStorage.setItem('blogs', JSON.stringify(filteredBlogs))
+localStorage.removeItem('blogs')
+if(userBlogsMike){
+  localStorage.setItem('blogs', JSON.stringify(userBlogsMike))
 }
+
 
 clearForm()
 

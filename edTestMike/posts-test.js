@@ -18,10 +18,15 @@ const initializeLocalStorage = (hasData) => {
 
 // Test if no blog posts are found, the page should display a message indicating that no blog posts are available.
 const storedBlogs = localStorage.getItem('blogs')
-localStorage.removeItem('blogs')
+
+// localStorage.removeItem('blogs')
 if(typeof renderBlogList !== 'undefined'){
   renderBlogList()
 }
+
+const userBlogsMike = JSON.parse(localStorage.getItem('blogs'))
+console.log('stored blogs mike', userBlogsMike)
+localStorage.removeItem('blogs')
 
 edTest(
   'Should display a message indicating that no blog posts are available if no blog posts are found.',
@@ -192,19 +197,23 @@ edTest(
 );
 const blogs = JSON.parse(localStorage.getItem('blogs'))
 
-const filteredBlogs = blogs?.filter((blog) => {
-  if (blog.username === 'test' && blog.title === 'test' && blog.content === 'test') {
-    return false; // This blog has all fields set to 'test' and will be filtered out
-  }
-  return true; // Keep this blog if any field is not 'test'
-});
-if(filteredBlogs){
-  localStorage.setItem('blogs', JSON.stringify(filteredBlogs))
-}
+// const filteredBlogs = blogs?.filter((blog) => {
+//   if (blog.username === 'test' && blog.title === 'test' && blog.content === 'test') {
+//     return false; // This blog has all fields set to 'test' and will be filtered out
+//   }
+//   return true; // Keep this blog if any field is not 'test'
+// });
+// if(filteredBlogs){
+//   localStorage.setItem('blogs', JSON.stringify(filteredBlogs))
+// }
 
 if(document.querySelector('main')){
   document.querySelector('main').innerHTML = ''
 }
 if(typeof renderBlogList !== 'undefined'){
   renderBlogList()
+}
+
+if(userBlogsMike){
+  localStorage.setItem(JSON.stringify(userBlogsMike))
 }
