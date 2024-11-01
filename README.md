@@ -1,3 +1,8 @@
+# Important note about using this starter repo
+-For storing your blogs in local storage, you must use the key 'blogs'. In order for the local tests to be able to check your local storage, it needs to know the key to look for.  I chose 'blogs'
+
+
+
 # 04 Web APIs: Personal Blog
 
 ## Your Task
