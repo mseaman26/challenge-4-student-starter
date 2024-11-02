@@ -210,3 +210,4 @@ if(userBlogsMike){
 if(typeof renderBlogList !== 'undefined'){
   renderBlogList()
 }
+isTest = false
